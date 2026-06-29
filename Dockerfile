@@ -1,16 +1,6 @@
-# Используем официальный образ Ubuntu 26.04
-FROM ubuntu:26.04
+FROM quay.io/toolbx/ubuntu-toolbox:26.04
 
 ENV DEBIAN_FRONTEND=noninteractive
-
-# 1. Установка базовых утилит для настройки репозиториев
-RUN apt-get update && apt-get dist-upgrade -y \
-    && apt-get install -y --no-install-recommends \
-    curl \
-    ca-certificates \
-    gnupg \
-    locales \
-    && rm -rf /var/lib/apt/lists/*
 
 # 2. Настройка локалей (русский язык)
 RUN locale-gen ru_RU.UTF-8
@@ -32,12 +22,9 @@ Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 EOF
 
-# 4. Обновление списков пакетов с новыми репозиториями
-RUN apt-get update
-
 # 5. Установка зависимостей для Distrobox (GTK + FreeDesktop)
 # Мы ставим минимальный набор, чтобы контейнер был легким, но GUI работал.
-RUN apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     # GTK стеки (3 и 4 версии)
     libgtk-3-0 \
     libgtk-4-1 \
