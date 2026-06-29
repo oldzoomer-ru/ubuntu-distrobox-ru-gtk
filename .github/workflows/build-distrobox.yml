@@ -2,7 +2,7 @@ name: Build Distrobox Ubuntu 26.04 Image
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   workflow_dispatch: # Позволяет запускать вручную
 
 env:
