@@ -1,13 +1,11 @@
 # Используем официальный образ Ubuntu 26.04
 FROM ubuntu:26.04
 
-LABEL org.opencontainers.image.source="https://github.com/${GITHUB_REPOSITORY}"
-LABEL description="Distrobox image for Ubuntu 26.04 with Russian mirrors and GUI dependencies"
-
 ENV DEBIAN_FRONTEND=noninteractive
 
 # 1. Установка базовых утилит для настройки репозиториев
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get dist-upgrade -y \
+    && apt-get install -y --no-install-recommends \
     curl \
     ca-certificates \
     gnupg \
