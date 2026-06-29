@@ -33,4 +33,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     dbus-x11 \
     \
     # Удаление старых кэшей
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-mark minimize-manual -y
