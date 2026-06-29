@@ -27,7 +27,7 @@ RUN mkdir -p /etc/apt/sources.list.d
 RUN cat > /etc/apt/sources.list.d/ubuntu.sources << 'EOF'
 Types: deb
 URIs: http://ru.archive.ubuntu.com/ubuntu/
-Suites: oracular oracular-updates oracular-backports
+Suites: resolute resolute-updates resolute-backports
 Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 EOF
