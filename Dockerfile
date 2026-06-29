@@ -26,7 +26,7 @@ RUN mkdir -p /etc/apt/sources.list.d
 
 # Создаем файл ubuntu.sources в формате YAML-like (DEB822)
 # Используем зеркало ru.archive.ubuntu.com для скорости в РФ
-cat > /etc/apt/sources.list.d/ubuntu.sources << 'EOF'
+RUN cat > /etc/apt/sources.list.d/ubuntu.sources << 'EOF'
 Types: deb
 URIs: http://ru.archive.ubuntu.com/ubuntu/
 Suites: oracular oracular-updates oracular-backports
