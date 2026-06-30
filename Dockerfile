@@ -13,18 +13,15 @@ Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 EOF
 
 # Установка зависимостей для Distrobox (GTK + FreeDesktop)
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y \
     # GTK стеки (3 и 4 версии)
     libgtk-3-0 \
     libgtk-4-1 \
-    gnome-keyring \
     \
     # FreeDesktop и интеграция с хостом
     xdg-utils \
     xdg-desktop-portal \
     xdg-desktop-portal-gtk \
-    shared-mime-info \
-    libsecret-1-0 \
     \
     # Системные шрифты (чтобы текст в приложениях не был "квадратами")
     fonts-noto-cjk \
