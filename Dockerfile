@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
     # GTK стеки (3 и 4 версии)
     libgtk-3-0 \
     libgtk-4-1 \
-    gnome-keyring \
+    libsecret-1-0 \
     \
     # FreeDesktop и интеграция с хостом
     xdg-utils \
